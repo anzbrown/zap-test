@@ -1,0 +1,49 @@
+cache:
+  key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
+
+stages:
+  - build
+  - cleanup
+  - publish
+
+image: docker-registry.ncredinburgh.com/connections-docker/sdk-build-env:1.1
+
+build:
+  stage: build
+  before_script:
+    - npm install
+  script:
+    - npm run babel
+  tags:
+    - cluster
+
+delete_snapshot:
+  stage: cleanup
+  image: docker-registry.ncredinburgh.com/connections-docker/npm-delete-package:1.0
+  allow_failure: true
+  only:
+    refs:
+      - master
+    variables:
+      - $PROJECT_VERSION =~ "/SNAPSHOT/"
+  before_script:
+    - PROJECT_VERSION=$(node -e "console.log(require('./package.json').version)")
+    - PROJECT_NAME=$(node -e "console.log(require('./package.json').name.split('/')[1])")
+  script:
+    - echo $PROJECT_NAME $PROJECT_VERSION
+    - python /opt/npm_delete/nexusDeletifier_npm_artifact.py --repo npm-hosted --packagename $PROJECT_NAME --packageversion $PROJECT_VERSION --username $JENKINS --password $JENKINS_PWD
+  tags:
+    - cluster
+
+publish:
+  stage: publish
+  only:
+    refs:
+      - master
+  before_script:
+    - npm install
+    - npm run babel
+  script:
+    - npm publish
+  tags:
+    - cluster

@@ -1,0 +1,33 @@
+{
+  "name": "zap-test",
+  "version": "1.0.0-ALPHA",
+  "description": "Use the OWASP ZAP API to execute spider, passive, active scanning and report generation",
+  "main": "transpiled/index.js",
+  "publishConfig": {
+    "registry": "https://npm-deploy.ncredinburgh.com/"
+  },
+  "scripts": {
+    "babel": "babel src --out-dir transpiled"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:anzbrown/zap-test.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "commander": "^5.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2"
+  },
+  "bin": {
+    "zap-test": "transpiled/index.js"
+  },
+  "files": [
+    "transpiled/**/*"
+  ]
+}
