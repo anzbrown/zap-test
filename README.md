@@ -1,7 +1,7 @@
 # OWASP ZAP Test Utils
 
 ### Configuration
-The [node project](https://gitlab.ncredinburgh.com/connections-common-js/zap-test "ZAP Test") which triggers the scanning and generates the report requires the following parameters:
+This node project ZAP Test which triggers the scanning and generates the report requires the following parameters:
 
 | Parameter    	| Short form 	| Long form     	| Required 	|
 |--------------	|------------	|---------------	|----------	|
@@ -16,7 +16,7 @@ which should be declared in a `.env` file in the root project folder and never c
 # The hostname and port of the Zap container to proxy requests and run analysis through e.g.: zap:9090 if using the docker-compose setup
 ZAP_HOST=zapHost:zapPort
 
-# The hostname and post of the ESS dashboard server e.g.: 127.0.0.1:8080 if running locally
+# The hostname and post of the test server e.g.: 127.0.0.1:8080 if running locally
 HOST=hostname:port
 
 # The account to login to run the E2E tests with
