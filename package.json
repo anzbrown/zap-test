@@ -1,6 +1,6 @@
 {
   "name": "zap-test-runner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use the OWASP ZAP API to execute spider, passive, active scanning and report generation",
   "main": "transpiled/index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git@github.com:anzbrown/zap-test.git"
   },
-  "author": "",
+  "author": "anzbrown",
   "license": "UNLICENSED",
   "dependencies": {
     "axios": "^0.19.2",
