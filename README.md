@@ -3,6 +3,8 @@
 [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/anzbrown/zap-test/Node.js%20Build/main?style=for-the-badge)](https://github.com/anzbrown/zap-test/actions?query=workflow%3A%22Node.js+Build%22+branch%3Amain+)
 [![npm](https://img.shields.io/npm/v/zap-test-runner?style=for-the-badge)](https://www.npmjs.com/package/zap-test-runner)
 
+<a href="https://www.buymeacoffee.com/adambrown" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-violet.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
 ### Configuration
 This node project ZAP Test which triggers the scanning and generates the report requires the following parameters:
 
